@@ -33,7 +33,7 @@ function App() {
 
     const [results, setResults] = useState([]);
     const [searchText, setSearchText] = useState('');
-    const [contentType, setContentType] = useState('movie');
+    const [contentType, setContentType] = useState('');
 
 
     const search = () => {
@@ -71,6 +71,7 @@ function App() {
                         id: 'content-type',
                     }}
                 >
+                    <option value=''>All</option>
                     <option value='movie'>Movies</option>
                     <option value='series'>Series</option>
                 </Select>
@@ -82,9 +83,11 @@ function App() {
                 </IconButton>
             </div>
             <div className="results">
-                <h1>hbo</h1>
+                <img style={{margin: '20px', height: '50px'}} src="https://upload.wikimedia.org/wikipedia/commons/5/5a/HBOGO.svg" alt="hbologo"/>
                 <Movies results={results.hbo} contentType={contentType}/>
-                <h1>netflix</h1>
+                <img style={{margin: '20px', height: '50px'}}
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/320px-Netflix_2015_logo.svg.png"
+                    alt="netflixlogo"/>
                 <Movies results={results.netflix} contentType={contentType}/>
             </div>
         </div>
